@@ -14,7 +14,7 @@ class MyComponent(Grasshopper.Kernel.GH_ScriptInstance):
 
         contours = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         
-        if (contours == None):
+        if (contours is None):
             ghenv.Component.AddRuntimeMessage(gh.GH_RuntimeMessageLevel.Error, "find contour failed.")
             return
 

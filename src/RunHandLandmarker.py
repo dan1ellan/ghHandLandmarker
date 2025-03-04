@@ -11,9 +11,6 @@ import cv2
 import os
 
 
-DIRECTORY = os.path.dirname(ghdoc.Path)
-
-
 class MyComponent(Grasshopper.Kernel.GH_ScriptInstance):
     def RunScript(self, img):
         return hand_landmarks(img)
@@ -41,7 +38,7 @@ def hand_landmarks(img):
         return handedness == "Right", points, annotated_image
 
 
-def annotate_landmarks(rgb_image, hand_landmarks, handedness) -> None:
+def annotate_landmarks(rgb_image, hand_landmarks, handedness):
     annotated_image = np.copy(rgb_image)
 
     # Draw the hand landmarks.
