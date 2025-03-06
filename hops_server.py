@@ -194,7 +194,7 @@ def detect_corners(encoded_str):
     hull = cv2.convexHull(approx_contours)
 
     if (len(hull) != 4):
-        raise ValueError("failed to find approx contours.")
+        raise ValueError("there should be 4 corners.")
 
     sort_hull_x_desc = hull[np.argsort(hull[:,0,0])[::-1]]
     top_two_max_x = sort_hull_x_desc[:2]
